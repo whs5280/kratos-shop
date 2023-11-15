@@ -22,7 +22,7 @@ func (u *UserService) CreateUser(ctx context.Context, req *pb.CreateUserInfo) (*
 	user, err := u.uc.Create(ctx, &biz.User{
 		Mobile:   req.Mobile,
 		Password: req.Password,
-		Nickname: req.NickName,
+		NickName: req.NickName,
 	})
 	if err != nil {
 		return nil, err
@@ -32,7 +32,7 @@ func (u *UserService) CreateUser(ctx context.Context, req *pb.CreateUserInfo) (*
 		Id:       user.Id,
 		Mobile:   user.Mobile,
 		Password: user.Password,
-		NickName: user.Nickname,
+		NickName: user.NickName,
 		Gender:   user.Gender,
 		Role:     int32(user.Role),
 		Birthday: user.Birthday,
