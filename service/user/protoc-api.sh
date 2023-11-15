@@ -14,3 +14,7 @@ protoc --proto_path=./internal \
        --proto_path=./third_party \
                --go_out=paths=source_relative:./internal \
        internal/conf/conf.proto
+
+
+# 根据`protoc`生成`service`代码
+kratos proto server api/user/v1/user.proto -t internal/service
